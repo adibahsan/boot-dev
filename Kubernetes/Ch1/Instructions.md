@@ -16,11 +16,20 @@ minikube dashboard
 
 - **Viewing deployments:** Use `kubectl get deployments` to see the status of the deployments.
 
-- **Accessing the web page:** Use `kubectl port-forward` with the pod name and the port number to forward the traffic from the cluster to the local network.
+- **Accessing the web page:** Use `kubectl port-forward` with the pod name and the port number to forward the traffic from the cluster to the local network. 
 
-- **Testing the HTTP requests:** Use the text box and the button to run the HTTP tests on the web page, and check the results below.
+```
+kubectl port-forward synergychat-web-f6555699b-bbnc7 8080:8080
 
-- **Asking Boots a question:** Use the chat box at the bottom to ask Boots the Bear with a Back-End for help or clarification on any topic related to the tutorial.
+```
+<li>Minikube vs Prod</li>
+
+- **Minikube vs Production:** Minikube is a single-node cluster for learning Kubernetes, while production clusters are multi-node distributed systems.
+
+- **Distributed Systems:** Systems that involve multiple machines communicating over a network. Kubernetes abstracts away the complexity of distributed systems and does the hard work for you.
+
+- **Resources and Nodes:** Kubernetes manages the resources (CPU, memory, disk space) that applications require and automatically distributes the load across nodes (machines). Kubernetes can scale up the cluster by adding more nodes when needed.
+
 
 
 </ol>
