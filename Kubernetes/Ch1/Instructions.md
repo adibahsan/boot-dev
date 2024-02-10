@@ -2,7 +2,11 @@
 
 <li> **Minikube** </li>
 
-- **Minikube Config:** minikube start --extra-config "apiserver.cors-allowed-origins=["http://boot.dev"]"
+- **Minikube Config:**
+```cmd
+minikube start --extra-config "apiserver.cors-allowed-origins=["http://boot.dev"]"
+```
+
 - minikube version
 - **Minikube Dashboard:** to check minikube's version -
 
@@ -14,9 +18,29 @@ minikube dashboard
 
 - **Deploying an image:** Use `kubectl create deployment` with the name of the deployment and the ID of the Docker image.
 
+```bash
+kubectl create deployment synergychat-web --image=lanecwagner/synergychat-web:latest
+
+```
+
+
 - **Viewing deployments:** Use `kubectl get deployments` to see the status of the deployments.
 
+```bash
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+synergychat-web   1/1     1            1           59m
+```
+
+- **Viewing Pods:** Use `kubectl get pods` to see the status of the pods.
+
+```bash
+NAME                               READY   STATUS    RESTARTS   AGE
+synergychat-web-85f945bfdd-d92fn   1/1     Running   0          60m
+```
+
 - **Accessing the web page:** Use `kubectl port-forward` with the pod name and the port number to forward the traffic from the cluster to the local network. 
+
+-- `kubectl port-forward PODNAME 8080:8080`
 
 ```
 kubectl port-forward synergychat-web-f6555699b-bbnc7 8080:8080
